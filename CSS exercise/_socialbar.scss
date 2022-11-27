@@ -1,0 +1,89 @@
+
+/* Social Media buttons */
+
+@mixin container-socials ($background) {
+ color: white;
+ width: 200px;
+ height: 50px;
+ display: flex;
+ flex-flow: row;
+ justify-content: start;
+ margin-right: -150px;
+ background-color: $background;
+}
+
+@mixin container-socials-hover {
+ color: #fff;
+ width: 200px;
+ height: 50px;
+ transform: background-color;
+ transition: ease-in;
+ transition-duration: 500ms;
+ margin-right: 0px;
+}
+
+@mixin social-icoon {
+ display: flex;
+ flex-flow: row;
+ align-items: center;
+ justify-content: center;
+ padding-left: 16px;
+}
+
+.social {
+ display: grid;
+ justify-items: end;
+ position: absolute;
+ right: 0px;
+ width: 100%;
+ height: 250px;
+ margin-top: 100px;
+
+    &_container-blog {
+    @include container-socials(#e17b77);    
+         &:hover {
+         @include container-socials-hover()
+         }
+    }
+
+    &_container-twitter {
+    @include container-socials(#00aced); 
+        &:hover {
+        @include container-socials-hover()
+        }
+    }
+ 
+    &_container-linkedin {
+    @include container-socials(#007bb6);    
+        &:hover {
+        @include container-socials-hover()
+        }
+    }
+    
+    &_container-facebook {
+    @include container-socials(#3b5998); 
+        &:hover {
+        @include container-socials-hover()
+        }
+    }
+
+    &_container-github {
+    @include container-socials(#333); 
+        &:hover {
+        @include container-socials-hover()
+        }
+    }
+
+    &_icoon {
+        @include social-icoon()
+        }    
+
+    &_text {
+        font-size: 13px;
+        padding-left: 22px;
+    }  
+    
+    &_link {
+    color: white;
+    }    
+}
